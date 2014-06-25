@@ -8,6 +8,7 @@ $this->setDescription('Page d\'Acceuil du site');
 	    <h3>Gestion d'un espace membre</h3>
 
 	<a href="enregistrementUser"><button class= "btn btn-success">S'enregistrer</button></a>
+	<?php if (!isset($_SESSION['email_User'])) :?>
 	<h3> Se connecter </h3>
 	<form class="form-horizontal" method = "post" action = "home?action=connexion">
 
@@ -17,6 +18,7 @@ $this->setDescription('Page d\'Acceuil du site');
 	<input type="submit" class ="btn btn-warning" value = "Connexion"/>
 
 	</form>
+	<?php endif ?>
 
 	<div class = "col-md-12">
 		<h4>
