@@ -14,7 +14,7 @@ $this->setDescription('Page d\'Acceuil du site');
 	<?php echo $this->form->input('emaillog','Email'); ?>
 	<?php echo $this->form->input('mdplog','Mot de passe',array('type'=>'password')); ?>
 
-	<input type="submit" class ="col-xs-2 col-xs-offset-3 btn btn-warning" value = "Connexion"/>
+	<input type="submit" class ="btn btn-warning" value = "Connexion"/>
 
 	</form>
 
@@ -30,6 +30,7 @@ $this->setDescription('Page d\'Acceuil du site');
 
 	<?php if (isset($_SESSION['admin']) AND ($_SESSION['admin'] == true)) : ?>
 			<a href="home?action=listerUser"><button class= "btn btn-success">lister les utilisateurs</button></a>
+			<?php if (isset($this->Users)) : ?>
 			<table class="table">
 				   <caption><h2>Liste des utilisateurs<h2></caption>
 				   <thead>
@@ -60,9 +61,10 @@ $this->setDescription('Page d\'Acceuil du site');
 									}
 							?></td>
 					  </tr>
-					<?php endforeach ?>	   
+					<?php endforeach ?>		
 				</tbody>
-			</table>	
+			</table>	 
+			<?php endif ?>
 	<?php endif;?>
 
 
