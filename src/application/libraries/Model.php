@@ -47,6 +47,13 @@ class Model
 			}
 		}
 	}
+	public function dataToForm($data){
+		$datainit = new stdClass();
+        $this->form->data = $datainit; 
+            foreach($data as $k=>$v){
+                $this->form->data->$k=$v;
+            }
+	}
 	/**
 	* Permet de valider des données
 	* @param $data données à valider 

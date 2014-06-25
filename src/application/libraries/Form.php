@@ -6,9 +6,10 @@ class Form
 	public $errors;
 	public $data; 
 
+
 	public function __construct($controller=null)
 	{
-		$this->controller = $controller; 
+		$this->controller = $controller;
 	}
 
 	public function input($name,$label,$options = array(),$collabel='col-xs-2',$colinput='col-xs-6')

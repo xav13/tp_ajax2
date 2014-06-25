@@ -26,6 +26,7 @@ $this->setDescription('Page d\'Acceuil du site');
 
 	<?php if (isset($_SESSION['email_User'])) : ?>
 		<a href="home?action=deconnexion"><button class= "btn btn-danger">Se déconnecter</button></a>
+		<a href="moncompte"><button class= "btn btn-danger">Mon Compte</button></a>
 	<?php endif; ?>
 
 	<?php if (isset($_SESSION['admin']) AND ($_SESSION['admin'] == true)) : ?>
