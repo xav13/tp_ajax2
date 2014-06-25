@@ -54,6 +54,13 @@ class HomeController extends Controller
             }
     	}
     }
+	public function listerUser() 
+	{
+		$this->loadModel('User','form');
+		$this->view->form = $this->User->form;
+		$Users = $this->User->getUsers();
+		$this->view->Users = $Users;
+	}
     public function deconnexion()
     {
         $this->loadModel('User','form');

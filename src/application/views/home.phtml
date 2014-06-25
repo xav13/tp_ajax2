@@ -29,7 +29,40 @@ $this->setDescription('Page d\'Acceuil du site');
 	<?php endif; ?>
 
 	<?php if (isset($_SESSION['admin']) AND ($_SESSION['admin'] == true)) : ?>
-		<h2> Proposer à l'admin de choisir un user ( a développer)  </h2>
+			<a href="home?action=listerUser"><button class= "btn btn-success">lister les utilisateurs</button></a>
+			<table class="table">
+				   <caption><h2>Liste des utilisateurs<h2></caption>
+				   <thead>
+					  <tr>
+						 <th>Id</th>
+						 <th>Prenom</th>
+						 <th>Nom</th>
+						 <th>Telephone</th>
+						 <th>E-mail</th>
+						 <th>Societe</th>
+						 <th>Role</th>
+					  </tr>
+				   </thead> 
+				   <tbody>
+				   <?php foreach ($this->Users as $User ): ?>
+					  <tr>
+						 <td><a href='#'><?= $User['id']; ?></a></td>
+						 <td><?= $User['prenom']; ?></td>
+						 <td><?= $User['nom']; ?></td>	
+						 <td><?= $User['telephone']; ?></td>
+						 <td><?= $User['email']; ?></td>
+						 <td><?= $User['societe']; ?></td>
+						 <td><?php if(($User['admin'])==1)
+									{
+										echo 'Admin';
+									}else{
+										echo 'Utilisateur';
+									}
+							?></td>
+					  </tr>
+					<?php endforeach ?>	   
+				</tbody>
+			</table>	
 	<?php endif;?>
 
 
