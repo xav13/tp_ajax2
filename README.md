@@ -1,1 +1,1 @@
-je suis contributeur
+Espace membre, vous pouvez contribuer
